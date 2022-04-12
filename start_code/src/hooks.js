@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const toggleMode = () => {
+export const useToggleMode = () => {
 
     const [currentMode, setCurrentMode] = useState(true);
 
@@ -8,7 +8,7 @@ export const toggleMode = () => {
         setCurrentMode(!currentMode);
     }
 
-    return { handleSwitch, toggleMode}
+    return [ currentMode, handleSwitch]
 
 }
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MainPage from './pages/MainPage';
-import { toggleMode } from './hooks';
+import { useToggleMode } from './hooks';
 
 function App() {
 
@@ -10,11 +10,15 @@ function App() {
   //   setIsDarkMode(!isDarkMode);
   // }
 
-  let {currentMode ,handleSwitch} = toggleMode
+  let [currentMode, handleSwitch] = useToggleMode()
+
+  const example = () => {
+    handleSwitch()
+  }
 
   return (
     <div className={currentMode ? "dark" : "light"}>
-      <button onClick={handleSwitch}>Dark/Light</button>
+      <button onClick={example}>Dark/Light</button>
       <MainPage />
     </div>
   );
